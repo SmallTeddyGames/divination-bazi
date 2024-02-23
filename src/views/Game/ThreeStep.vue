@@ -10,10 +10,10 @@ const props = defineProps({
   }
 })
 
-const yearShiShen = ref()
-const monthShiShen = ref()
-const dayShiShen = ref()
-const timeShiShen = ref()
+const yearShiShen = ref('未知')
+const monthShiShen = ref('未知')
+const dayShiShen = ref('未知')
+const timeShiShen = ref('未知')
 
 const getShiShen = () => {
   yearShiShen.value = props.baZi.getYearShiShenZhi()
