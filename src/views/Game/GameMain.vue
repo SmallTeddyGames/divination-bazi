@@ -31,20 +31,23 @@ const lunar = computed(() => {
   }
 })
 
-const yearGan = computed(() => lunar.value ? lunar.value.getYearGan() : '')
-const yearZhi = computed(() => lunar.value ? lunar.value.getYearZhi() : '')
-const monthGan = computed(() => lunar.value ? lunar.value.getMonthGan() : '')
-const monthZhi = computed(() => lunar.value ? lunar.value.getMonthZhi() : '')
-const dayGan = computed(() => lunar.value ? lunar.value.getDayGan() : '')
-const dayZhi = computed(() => lunar.value ? lunar.value.getDayZhi() : '')
-const timeGan = computed(() => lunar.value ? lunar.value.getTimeGan() : '')
-const timeZhi = computed(() => lunar.value ? lunar.value.getTimeZhi() : '')
+const yearGan = computed(() => lunar.value ? lunar.value.getYearGan() : '未')
+const yearZhi = computed(() => lunar.value ? lunar.value.getYearZhi() : '知')
+const monthGan = computed(() => lunar.value ? lunar.value.getMonthGan() : '未')
+const monthZhi = computed(() => lunar.value ? lunar.value.getMonthZhi() : '知')
+const dayGan = computed(() => lunar.value ? lunar.value.getDayGan() : '未')
+const dayZhi = computed(() => lunar.value ? lunar.value.getDayZhi() : '知')
+const timeGan = computed(() => lunar.value ? lunar.value.getTimeGan() : '未')
+const timeZhi = computed(() => lunar.value ? lunar.value.getTimeZhi() : '知')
 
 </script>
 
 <template>
   <div h-full w-screen color-white p8 flex-center gap-8>
-    <div h-320px w-400px of-hidden flex-center font-size-32px flex-col gap-8 border="1px dashed #fff" rounded-8>
+    <div h-400px w-600px of-hidden flex-center font-size-32px flex-col gap-8 border="1px dashed #fff" rounded-4 bg-mask>
+      <div class="title">
+        第一步：获取生辰八字
+      </div>
       <!-- 年 -->
       <div flex-center gap-4>
         <div w-40px>年</div>
