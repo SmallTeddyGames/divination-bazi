@@ -34,19 +34,19 @@ watch(
       第三步：分析十神
     </div>
     <div flex-center>
-      <div w-130px>年五行：</div>
+      <div w-130px>年十神：</div>
       <div w-400px>{{ yearShiShen }}</div>
     </div>
     <div flex-center>
-      <div w-130px>月五行：</div>
+      <div w-130px>月十神：</div>
       <div w-400px>{{ monthShiShen }}</div>
     </div>
     <div flex-center>
-      <div w-130px>日五行：</div>
+      <div w-130px>日十神：</div>
       <div w-400px>{{ dayShiShen }}</div>
     </div>
     <div flex-center>
-      <div w-130px>时五行：</div>
+      <div w-130px>时十神：</div>
       <div w-400px>{{ timeShiShen }}</div>
     </div>
   </StepCard>
