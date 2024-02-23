@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import { SolarUtil, Lunar } from 'lunar-typescript';
 
-const year = ref('')
+const year = ref(1990) // 默认1990年，方便选择
 const yearItems = ref([1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921, 1922, 1923, 1924, 1925, 1926, 1927, 1928, 1929, 1930, 1931, 1932, 1933, 1934, 1935, 1936, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947, 1948, 1949, 1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958, 1959, 1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026])
-const month = ref('')
+const month = ref()
 const monthItems = ref([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
-const day = ref('')
+const day = ref()
 const dayNum = ref()
 const dayItems = ref([])
-const time = ref('')
+const time = ref()
 const timeItems = ref([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24])
 
 const yearMonthChange = () => {
@@ -43,12 +43,12 @@ const timeZhi = computed(() => lunar.value ? lunar.value.getTimeZhi() : '')
 </script>
 
 <template>
-  <div h-full w-screen color-white p8 flex="~ col" gap-8>
-    <div h-full w-full of-hidden flex-center font-size-32px flex-col gap-8>
+  <div h-full w-screen color-white p8 flex-center gap-8>
+    <div h-320px w-400px of-hidden flex-center font-size-32px flex-col gap-8 border="1px dashed #fff" rounded-8>
       <!-- 年 -->
       <div flex-center gap-4>
         <div w-40px>年</div>
-        <el-select v-model="year" placeholder="pick a year" style="width: 180px" @change="yearMonthChange">
+        <el-select v-model="year" placeholder="year" style="width: 120px" @change="yearMonthChange">
           <el-option v-for="item in yearItems" :key="item" :value="item" :label="`${item}年`" />
         </el-select>
         <div w-160px>干支：{{ yearGan }}{{ yearZhi }}</div>
@@ -56,7 +56,7 @@ const timeZhi = computed(() => lunar.value ? lunar.value.getTimeZhi() : '')
       <!-- 月 -->
       <div flex-center gap-4>
         <div w-40px>月</div>
-        <el-select v-model="month" placeholder="pick a month" style="width: 180px" @change="yearMonthChange">
+        <el-select v-model="month" placeholder="month" style="width: 120px" @change="yearMonthChange">
           <el-option v-for="item in monthItems" :key="item" :value="item" :label="`${item}月`" />
         </el-select>
         <div w-160px>干支：{{ monthGan }}{{ monthZhi }}</div>
@@ -64,7 +64,7 @@ const timeZhi = computed(() => lunar.value ? lunar.value.getTimeZhi() : '')
       <!-- 日 -->
       <div flex-center gap-4>
         <div w-40px>日</div>
-        <el-select v-model="day" placeholder="pick a day" style="width: 180px">
+        <el-select v-model="day" placeholder="day" style="width: 120px">
           <el-option v-for="item in dayItems" :key="item" :value="item" :label="`${item}日`" />
         </el-select>
         <div w-160px>干支：{{ dayGan }}{{ dayZhi }}</div>
@@ -72,7 +72,7 @@ const timeZhi = computed(() => lunar.value ? lunar.value.getTimeZhi() : '')
       <!-- 时 -->
       <div flex-center gap-4>
         <div w-40px>时</div>
-        <el-select v-model="time" placeholder="pick a time" style="width: 180px">
+        <el-select v-model="time" placeholder="time" style="width: 120px">
           <el-option v-for="item in timeItems" :key="item" :value="item" :label="`${item}点`" />
         </el-select>
         <div w-160px>干支：{{ timeGan }}{{ timeZhi }}</div>
