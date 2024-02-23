@@ -43,8 +43,119 @@ const timeZhi = computed(() => lunar.value ? lunar.value.getTimeZhi() : '知')
 </script>
 
 <template>
-  <div h-full w-screen color-white p8 flex-center gap-8>
-    <div h-400px w-600px of-hidden flex-center font-size-32px flex-col gap-8 border="1px dashed #fff" rounded-4 bg-mask>
+  <div style="height: calc(100vh - 58px); overflow: auto" w-screen color-white p8 flex-center flex-wrap gap-8>
+    <div h-340px w-600px of-hidden flex-center font-size-32px flex-col gap-4 border="1px dashed #fff" rounded-4 bg-mask>
+      <div class="title">
+        第一步：获取生辰八字
+      </div>
+      <!-- 年 -->
+      <div flex-center gap-4>
+        <div w-40px>年</div>
+        <el-select v-model="year" placeholder="year" style="width: 120px" @change="yearMonthChange">
+          <el-option v-for="item in yearItems" :key="item" :value="item" :label="`${item}年`" />
+        </el-select>
+        <div w-160px>干支：{{ yearGan }}{{ yearZhi }}</div>
+      </div>
+      <!-- 月 -->
+      <div flex-center gap-4>
+        <div w-40px>月</div>
+        <el-select v-model="month" placeholder="month" style="width: 120px" @change="yearMonthChange">
+          <el-option v-for="item in monthItems" :key="item" :value="item" :label="`${item}月`" />
+        </el-select>
+        <div w-160px>干支：{{ monthGan }}{{ monthZhi }}</div>
+      </div>
+      <!-- 日 -->
+      <div flex-center gap-4>
+        <div w-40px>日</div>
+        <el-select v-model="day" placeholder="day" style="width: 120px">
+          <el-option v-for="item in dayItems" :key="item" :value="item" :label="`${item}日`" />
+        </el-select>
+        <div w-160px>干支：{{ dayGan }}{{ dayZhi }}</div>
+      </div>
+      <!-- 时 -->
+      <div flex-center gap-4>
+        <div w-40px>时</div>
+        <el-select v-model="time" placeholder="time" style="width: 120px">
+          <el-option v-for="item in timeItems" :key="item" :value="item" :label="`${item}点`" />
+        </el-select>
+        <div w-160px>干支：{{ timeGan }}{{ timeZhi }}</div>
+      </div>
+    </div>
+    <div h-340px w-600px of-hidden flex-center font-size-32px flex-col gap-4 border="1px dashed #fff" rounded-4 bg-mask>
+      <div class="title">
+        第一步：获取生辰八字
+      </div>
+      <!-- 年 -->
+      <div flex-center gap-4>
+        <div w-40px>年</div>
+        <el-select v-model="year" placeholder="year" style="width: 120px" @change="yearMonthChange">
+          <el-option v-for="item in yearItems" :key="item" :value="item" :label="`${item}年`" />
+        </el-select>
+        <div w-160px>干支：{{ yearGan }}{{ yearZhi }}</div>
+      </div>
+      <!-- 月 -->
+      <div flex-center gap-4>
+        <div w-40px>月</div>
+        <el-select v-model="month" placeholder="month" style="width: 120px" @change="yearMonthChange">
+          <el-option v-for="item in monthItems" :key="item" :value="item" :label="`${item}月`" />
+        </el-select>
+        <div w-160px>干支：{{ monthGan }}{{ monthZhi }}</div>
+      </div>
+      <!-- 日 -->
+      <div flex-center gap-4>
+        <div w-40px>日</div>
+        <el-select v-model="day" placeholder="day" style="width: 120px">
+          <el-option v-for="item in dayItems" :key="item" :value="item" :label="`${item}日`" />
+        </el-select>
+        <div w-160px>干支：{{ dayGan }}{{ dayZhi }}</div>
+      </div>
+      <!-- 时 -->
+      <div flex-center gap-4>
+        <div w-40px>时</div>
+        <el-select v-model="time" placeholder="time" style="width: 120px">
+          <el-option v-for="item in timeItems" :key="item" :value="item" :label="`${item}点`" />
+        </el-select>
+        <div w-160px>干支：{{ timeGan }}{{ timeZhi }}</div>
+      </div>
+    </div>
+    <div h-340px w-600px of-hidden flex-center font-size-32px flex-col gap-4 border="1px dashed #fff" rounded-4 bg-mask>
+      <div class="title">
+        第一步：获取生辰八字
+      </div>
+      <!-- 年 -->
+      <div flex-center gap-4>
+        <div w-40px>年</div>
+        <el-select v-model="year" placeholder="year" style="width: 120px" @change="yearMonthChange">
+          <el-option v-for="item in yearItems" :key="item" :value="item" :label="`${item}年`" />
+        </el-select>
+        <div w-160px>干支：{{ yearGan }}{{ yearZhi }}</div>
+      </div>
+      <!-- 月 -->
+      <div flex-center gap-4>
+        <div w-40px>月</div>
+        <el-select v-model="month" placeholder="month" style="width: 120px" @change="yearMonthChange">
+          <el-option v-for="item in monthItems" :key="item" :value="item" :label="`${item}月`" />
+        </el-select>
+        <div w-160px>干支：{{ monthGan }}{{ monthZhi }}</div>
+      </div>
+      <!-- 日 -->
+      <div flex-center gap-4>
+        <div w-40px>日</div>
+        <el-select v-model="day" placeholder="day" style="width: 120px">
+          <el-option v-for="item in dayItems" :key="item" :value="item" :label="`${item}日`" />
+        </el-select>
+        <div w-160px>干支：{{ dayGan }}{{ dayZhi }}</div>
+      </div>
+      <!-- 时 -->
+      <div flex-center gap-4>
+        <div w-40px>时</div>
+        <el-select v-model="time" placeholder="time" style="width: 120px">
+          <el-option v-for="item in timeItems" :key="item" :value="item" :label="`${item}点`" />
+        </el-select>
+        <div w-160px>干支：{{ timeGan }}{{ timeZhi }}</div>
+      </div>
+    </div>
+    <div h-340px w-600px of-hidden flex-center font-size-32px flex-col gap-4 border="1px dashed #fff" rounded-4 bg-mask>
       <div class="title">
         第一步：获取生辰八字
       </div>
