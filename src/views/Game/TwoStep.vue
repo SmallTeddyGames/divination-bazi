@@ -1,15 +1,15 @@
 <script lang='ts' setup>
-import { identity } from '@vueuse/core';
 import StepCard from './StepCard.vue';
 import { Solar, Lunar } from 'lunar-typescript';
 
 const props = defineProps({
-  allData: {
+  lunarDate: {
+    type: Object
+  },
+  baZi: {
     type: Object
   }
 })
-
-const lunar = ref()
 
 const GanWuXing = {
   '甲': '木',
@@ -65,10 +65,10 @@ const dayWuXing = ref('未知')
 const timeWuXing = ref('未知')
 
 const getJieQi = () => {
-  const { year, month, day } = props.allData
+  const { year, month, day } = props.lunarDate
 
   const youDate = Solar.fromYmd(year, month, day)
-  const jieQiTable = lunar.value.getJieQiTable()
+  const jieQiTable = props.lunarDate.getJieQiTable()
 
   const jieQi = ['冬至', '小寒', '大寒', '立春', '雨水', '惊蛰', '春分', '清明', '谷雨', '立夏', '小满', '芒种', '夏至', '小暑', '大暑', '立秋', '处暑', '白露', '秋分', '寒露', '霜降', '立冬', '小雪', '大雪']
 
@@ -94,26 +94,24 @@ const getJieQi = () => {
 }
 
 const getWuXing = () => {
-  const { yearGan, yearZhi, monthGan, monthZhi, dayGan, dayZhi, timeGan, timeZhi } = props.allData
-  lunar.value = Lunar.fromYmd(props.allData.year, props.allData.month, props.allData.day);
-  yearWuXing.value = GanWuXing[yearGan] + DiWuXing[yearZhi]
-  monthWuXing.value = GanWuXing[monthGan] + DiWuXing[monthZhi]
-  dayWuXing.value = GanWuXing[dayGan] + DiWuXing[dayZhi]
-  timeWuXing.value = GanWuXing[timeGan] + DiWuXing[timeZhi]
+  yearWuXing.value = props.baZi.getYearWuXing()
+  monthWuXing.value = props.baZi.getMonthWuXing()
+  dayWuXing.value = props.baZi.getDayWuXing()
+  timeWuXing.value = props.baZi.getTimeWuXing()
 
-  getJieQi()
-  analyse()
+  // getJieQi()
+  // analyse()
 }
 
 const analyse = () => {
-  const { month } = props.allData
+  const { month } = props.lunarDate
   // const season = Season[month]
 
   // console.log(season)
 }
 
 watch(
-  () => props.allData,
+  () => props.lunarDate,
   () => getWuXing()
 )
 

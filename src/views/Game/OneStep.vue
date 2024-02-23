@@ -44,20 +44,7 @@ const timeGan = computed(() => lunar.value ? lunar.value.getTimeGan() : '未')
 const timeZhi = computed(() => lunar.value ? lunar.value.getTimeZhi() : '知')
 
 const returnAllData = () => {
-  emit('getAllData', {
-    year: year.value,
-    month: month.value,
-    day: day.value,
-    time: time.value,
-    yearGan: yearGan.value,
-    yearZhi: yearZhi.value,
-    monthGan: monthGan.value,
-    monthZhi: monthZhi.value,
-    dayGan: dayGan.value,
-    dayZhi: dayZhi.value,
-    timeGan: timeGan.value,
-    timeZhi: timeZhi.value
-  })
+  emit('getAllData', lunar.value)
 }
 
 watch(
