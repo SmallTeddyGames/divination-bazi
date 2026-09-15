@@ -23,7 +23,7 @@ export default defineConfig({
                 {
                     'vue-router': [
                         'createRouter',
-                        'createWebHistory'
+                        'createWebHashHistory'
                     ]
                 },
                 // @vueuse/core auto import
