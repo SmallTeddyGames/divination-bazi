@@ -6,7 +6,8 @@ import FullScreenToggle from '@/views/NavButton/FullScreenToggle.vue'
 </script>
 
 <template>
-  <nav w-screen px-2 md:px4 py-2 md:py3 text-base md:text-lg bg-transparent border="b base" color-white flex="~ gap-1 items-center">
+  <nav w-screen px-2 md:px4 py-2 md:py3 text-base md:text-lg border="b base" color-white flex="~ gap-1 items-center"
+       style="background-color: rgba(0, 0, 0, 0.35)">
     <div title="Game" class="whitespace-nowrap">Divination Game</div>
     <div flex-auto></div>
     <!-- 游戏控制按钮 -->

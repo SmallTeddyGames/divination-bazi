@@ -2,7 +2,9 @@ html,
 body {
     height: 100vh;
     overflow: hidden;
-    --uno: bg-base font-ping;
+    --uno: font-ping;
+    background-color: #1a1a2e;
+    color: #fff;
 }
 
 html {
