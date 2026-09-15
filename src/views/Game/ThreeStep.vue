@@ -33,21 +33,21 @@ watch(
     <div class="title">
       第三步：分析十神
     </div>
-    <div flex-center>
-      <div w-130px>年十神：</div>
-      <div w-400px>{{ yearShiShen }}</div>
+    <div flex="~ wrap items-center justify-center" gap-2>
+      <div w-110px md:w-130px>年十神：</div>
+      <div w-full md:w-400px text-center md:text-left>{{ yearShiShen }}</div>
     </div>
-    <div flex-center>
-      <div w-130px>月十神：</div>
-      <div w-400px>{{ monthShiShen }}</div>
+    <div flex="~ wrap items-center justify-center" gap-2>
+      <div w-110px md:w-130px>月十神：</div>
+      <div w-full md:w-400px text-center md:text-left>{{ monthShiShen }}</div>
     </div>
-    <div flex-center>
-      <div w-130px>日十神：</div>
-      <div w-400px>{{ dayShiShen }}</div>
+    <div flex="~ wrap items-center justify-center" gap-2>
+      <div w-110px md:w-130px>日十神：</div>
+      <div w-full md:w-400px text-center md:text-left>{{ dayShiShen }}</div>
     </div>
-    <div flex-center>
-      <div w-130px>时十神：</div>
-      <div w-400px>{{ timeShiShen }}</div>
+    <div flex="~ wrap items-center justify-center" gap-2>
+      <div w-110px md:w-130px>时十神：</div>
+      <div w-full md:w-400px text-center md:text-left>{{ timeShiShen }}</div>
     </div>
   </StepCard>
 </template>

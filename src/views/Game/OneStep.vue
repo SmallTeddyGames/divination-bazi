@@ -59,36 +59,36 @@ watch(
       第一步：获取生辰八字
     </div>
     <!-- 年 -->
-    <div flex-center gap-4>
+    <div flex="~ wrap items-center justify-center" gap-2 md:gap-4>
       <div w-40px>年</div>
-      <el-select v-model="year" placeholder="year" style="width: 120px" @change="yearMonthChange">
+      <el-select v-model="year" placeholder="year" class="w-120px" @change="yearMonthChange">
         <el-option v-for="item in yearItems" :key="item" :value="item" :label="`${item}年`" />
       </el-select>
-      <div w-160px>干支：{{ yearGan }}{{ yearZhi }}</div>
+      <div w-full md:w-160px text-center md:text-left>干支：{{ yearGan }}{{ yearZhi }}</div>
     </div>
     <!-- 月 -->
-    <div flex-center gap-4>
+    <div flex="~ wrap items-center justify-center" gap-2 md:gap-4>
       <div w-40px>月</div>
-      <el-select v-model="month" placeholder="month" style="width: 120px" @change="yearMonthChange">
+      <el-select v-model="month" placeholder="month" class="w-120px" @change="yearMonthChange">
         <el-option v-for="item in monthItems" :key="item" :value="item" :label="`${item}月`" />
       </el-select>
-      <div w-160px>干支：{{ monthGan }}{{ monthZhi }}</div>
+      <div w-full md:w-160px text-center md:text-left>干支：{{ monthGan }}{{ monthZhi }}</div>
     </div>
     <!-- 日 -->
-    <div flex-center gap-4>
+    <div flex="~ wrap items-center justify-center" gap-2 md:gap-4>
       <div w-40px>日</div>
-      <el-select v-model="day" placeholder="day" style="width: 120px">
+      <el-select v-model="day" placeholder="day" class="w-120px">
         <el-option v-for="item in dayItems" :key="item" :value="item" :label="`${item}日`" />
       </el-select>
-      <div w-160px>干支：{{ dayGan }}{{ dayZhi }}</div>
+      <div w-full md:w-160px text-center md:text-left>干支：{{ dayGan }}{{ dayZhi }}</div>
     </div>
     <!-- 时 -->
-    <div flex-center gap-4>
+    <div flex="~ wrap items-center justify-center" gap-2 md:gap-4>
       <div w-40px>时</div>
-      <el-select v-model="time" placeholder="time" style="width: 120px">
+      <el-select v-model="time" placeholder="time" class="w-120px">
         <el-option v-for="item in timeItems" :key="item" :value="item" :label="`${item}点`" />
       </el-select>
-      <div w-160px>干支：{{ timeGan }}{{ timeZhi }}</div>
+      <div w-full md:w-160px text-center md:text-left>干支：{{ timeGan }}{{ timeZhi }}</div>
     </div>
   </StepCard>
 </template>

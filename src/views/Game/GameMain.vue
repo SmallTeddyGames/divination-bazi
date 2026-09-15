@@ -17,7 +17,7 @@ const getlunarDate = val => {
 </script>
 
 <template>
-  <div style="height: calc(100vh - 58px); overflow: auto" w-screen color-white p8 flex-center flex-wrap gap-8>
+  <div style="height: calc(100vh - 58px); overflow: auto" w-screen color-white p-4 md:p8 flex-center flex-wrap gap-4 md:gap-8>
     <OneStep @get-all-data="getlunarDate" />
     <TwoStep :lunar-date="lunarDate" :ba-zi="baZi" />
     <ThreeStep :lunar-date="lunarDate" :ba-zi="baZi" />

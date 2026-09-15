@@ -122,20 +122,20 @@ watch(
     <div class="title">
       第二步：分析五行
     </div>
-    <div flex-center>
-      <div w-130px>年五行：</div>
+    <div flex-center gap-2>
+      <div w-110px md:w-130px>年五行：</div>
       <div w-100px>{{ yearWuXing }}</div>
     </div>
-    <div flex-center>
-      <div w-130px>月五行：</div>
+    <div flex-center gap-2>
+      <div w-110px md:w-130px>月五行：</div>
       <div w-100px>{{ monthWuXing }}</div>
     </div>
-    <div flex-center>
-      <div w-130px>日五行：</div>
+    <div flex-center gap-2>
+      <div w-110px md:w-130px>日五行：</div>
       <div w-100px>{{ dayWuXing }}</div>
     </div>
-    <div flex-center>
-      <div w-130px>时五行：</div>
+    <div flex-center gap-2>
+      <div w-110px md:w-130px>时五行：</div>
       <div w-100px>{{ timeWuXing }}</div>
     </div>
   </StepCard>
